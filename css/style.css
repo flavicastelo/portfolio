@@ -1,0 +1,178 @@
+:root{
+    --preto: #222222;   
+    --rosa:#ee9ca7;
+    --azul: #7cd8e4;
+    
+    
+
+}
+*{
+    padding: 0;
+    margin: 0;
+    /*o conteudo se contente dentro da sua box*/
+    box-sizing: border-box;
+    color: var(--rosa);
+    font-family: 'Libre Bodoni', serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;    
+    margin-bottom: 20px;
+    border-bottom: 5px solid var(--azul);    
+}
+
+header ul{
+    display: flex;
+}
+
+header ul li{
+    padding: 5px;
+    font-size: 16px;
+    border-right: 1px dashed var(--azul);
+}
+
+header ul li a:hover{
+    color: var(--azul);
+    text-decoration: underline;
+}
+/* pega apenas a primeira li da ul */
+header ul li:first-child{
+    border-left: 1px dashed var(--azul);
+}
+
+ul{
+    list-style: none;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: var(--rosa);
+    transition: 300ms;
+}
+
+.logo{
+    font-family: 'Water Brush', cursive;
+    font-size:  40px;
+    padding-left: 10px;
+    padding-top: 12px;   
+    color: var(--preto);
+    background-image: linear-gradient(to right top, var(--azul), var(--rosa));
+    border-radius: 5px 50px 50px;
+    width: 80px;
+    height: 80px;
+
+}
+
+body{
+    height: 150vh;
+    background-image: linear-gradient(to right top, #222222, #3B3B3B);
+}
+
+.container{
+    text-align: center;
+}
+
+.container .name h1{
+    font-size: 60px;
+    margin-top: 100px;
+}
+
+.container .name h5{
+    font-size: 20px;
+    color: var(--azul);
+}
+
+#arrow{
+    font-size: 20px;
+    cursor: pointer;
+    animation: blink 1s steps(5, start) infinite;
+}
+
+@keyframes blink{
+    to{
+        visibility: hidden;
+    }
+}
+
+#animation{
+    transition: 300ms;
+}
+
+.rotate{
+    transform: rotate(180deg);
+    transition: 300ms;
+}
+
+.active{
+    display: block !important;
+}
+
+#about p{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    text-align: justify;
+}
+
+.form{
+    width: 50%;
+    margin: 0 auto;
+    
+    padding: 20px;
+}
+
+.form p{
+    margin-bottom: 10px;
+}
+
+.form input{
+    width: 50%;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.form button{
+    width: 15%;
+    padding: 5px 10px;
+    background-image: linear-gradient(to right, var(--azul) 50%, var(--rosa) 50%);    
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #fff;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+    border-radius: 0px 5px 5px 0px;
+    margin-top: 10px;
+    margin-left: -3px; 
+}
+.form button:hover{
+    background-position:left bottom;
+    color: #fff;
+   
+}
+
+/* responsividade */
+
+@media only screen and (max-width: 480px){
+    .container .name h1{
+        font-size: 30px;
+    }
+    .container .name h5{
+        font-size: 15px;
+    }
+    #about p{
+        max-width: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    .form{
+        width: 100%;
+    }
+}
